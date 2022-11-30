@@ -12,6 +12,11 @@ export class ShoppingListComponent {
     new Ingredient('Tomato', 5),
   ];
 
+  onIngredientAdded (ingredient :Ingredient){
+    this.ingredients.push(ingredient); //ingredient ditambahkan ke ingredients
+
+  }
+
 }
 
 // export class ShoppingListComponent implements OnInit{
