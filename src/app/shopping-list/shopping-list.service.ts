@@ -20,4 +20,9 @@ export class ShoppingListService {
     this.ingredientsChanged.emit(this.ingredients.slice()); //parameter (this.ingredients.slice()) akan ditambahkan melalui eventEmitter ke dalam shopping list.component.ts
   }
 
+  addIngredientss(ingredients : Ingredient[]) {
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
+
 }

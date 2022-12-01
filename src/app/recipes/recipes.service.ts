@@ -1,7 +1,9 @@
-import {EventEmitter} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import { Ingredient } from '../shared/ingredient.module';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from "./recipe.model";
 
+@Injectable() //unutk mendapatkan servis shopping
 export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();
@@ -25,7 +27,14 @@ export class RecipeService {
      )
   ];
 
+  constructor (private slService : ShoppingListService){} //mengijeksi shoppinglist service
+
   getRecipes(){ //unutk mengembalikan array
     return this.recipes.slice(); //slice digunakan untuk menyalin ke array baru
   }
+
+  addIngredientsToShoppingList(ingredients:Ingredient[]){
+    this.slService.addIngredientss(ingredients);
+  }
+
 }
