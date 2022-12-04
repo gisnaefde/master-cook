@@ -9,5 +9,6 @@ import { Recipe } from '../../recipe.model';
 export class RecipeItemComponent {
 
 @Input() recipe:Recipe; //@input digunakan agar bisa mendapatkan data
+@Input() index :number; //mengambil index dari recipe-list.component.html
 
 }
